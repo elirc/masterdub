@@ -6,7 +6,7 @@ TypeScript types exist only at compile time; every byte crossing a process bound
 
 ## Where the repo uses it well
 
-- **Parse at the boundary, trust inside**: [links route L54-L56](../../../apps/web/app/api/links/route.ts#L54-L56) parses the body; everything downstream takes typed `NewLinkProps`. 70+ schemas in [lib/zod/schemas/](../../../apps/web/lib/zod/schemas/) are the API's real specification — OpenAPI is generated from them ([scripts/generate-openapi.ts](../../../apps/web/scripts/generate-openapi.ts)).
+- **Parse at the boundary, trust inside**: [links route L54-L56](../../../apps/web/app/api/links/route.ts#L54-L56) parses the body; everything downstream takes typed `NewLinkProps`. 65 schema files in [lib/zod/schemas/](../../../apps/web/lib/zod/schemas/) are the API's real specification — OpenAPI is generated from them (`scripts/generate-openapi.ts` (named by the `generate-openapi` script in `apps/web/package.json`; the file is not in this snapshot)).
 - **Outbound parsing**: webhook payloads are parsed *before sending* ([links route L92](../../../apps/web/app/api/links/route.ts#L92)) — producing to a public contract is validated like consuming.
 - **Discriminated unions for fallible operations**: [process-link.ts#L44-L57](../../../apps/web/lib/api/links/process-link.ts#L44-L57), with `code?: never` on the success arm so you can't read an error code off a success.
 - **Literal-derived unions**: `PERMISSION_ACTIONS as const` → `PermissionAction` ([permissions.ts#L3-L31](../../../apps/web/lib/api/rbac/permissions.ts#L3-L31)) — the string list *is* the type; adding a permission updates both.

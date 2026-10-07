@@ -42,6 +42,16 @@ Running record of what was inspected while authoring this curriculum. Anchors in
 
 Re-confirmed via grep/ls after all docs were written: `LINKS_MAX_PAGE_SIZE` at `lib/zod/schemas/links.ts:36`; `lib/axiom/server.ts` exists; `app/api/webhooks/callback/` exists; `get-identity-hash.ts`, `with-prisma-retry.ts`, `lib/folder/permissions.ts`, `lib/webhook/failure.ts`, `get-link-or-throw.ts` all exist at the cited paths. Final tree: 53 markdown files under `fable docs/upskill/` (originally authored as `docs/upskill/`, moved 2026-07-09).
 
+## 2026-10-06 — accuracy pass against the committed snapshot
+
+Re-checked against this repository (`elirc/masterdub`, commit `64dba44`), statically — nothing was installed or run:
+
+- The `git remote` row above is stale: the curriculum now lives in its own repository, `elirc/masterdub`, with `dub/` as a plain folder (no upstream Dub history).
+- All 1,011 relative Markdown links under `fable docs/upskill/` were resolved. `00-fast-track.md` linked one directory too shallow (`../` instead of `../../`) and two `04-code-reading-gym` pages one too deep; both fixed. Every `#Lx-Ly` anchor is within its file's length, and the fast-track anchors (redirect guards, QStash skip, `withWorkspace`, links route) were spot-read and match.
+- `apps/web/scripts/generate-openapi.ts` is named by the `generate-openapi` script in `apps/web/package.json` but is **not in this snapshot**; links to it were replaced with plain text.
+- `apps/web/lib/zod/schemas/` holds 65 files (docs said "70+"); corrected.
+- File sizes in the table above have drifted slightly: `process-link.ts` is 591 lines (not "~800+"), `lib/swr/` has 103 files (not "~60 hooks"), `cache.ts` is 195 lines. The other line counts match to within one line.
+
 ## Known uncertainties / not covered
 
 - Anything under `app/(ee)` beyond the files listed (partner programs, payouts, bounties, fraud) was surveyed by directory listing only — depth there is thinner.

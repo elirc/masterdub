@@ -54,7 +54,7 @@ Open [apps/web/lib/api/links/create-link.ts#L55-L138](../../../apps/web/lib/api/
 Open [apps/web/lib/tinybird/record-click.ts#L110-L169](../../../apps/web/lib/tinybird/record-click.ts#L110-L169).
 
 - **Inputs:** request headers (Vercel geo headers — annotate the trust assumption: who can spoof these off-Vercel?).
-- **Invariant:** EU visitor IPs are never stored (L143-L145) — but `identityHash` (L88) is derived from IP earlier. Annotate whether the hash constitutes personal data under the same policy (this is a *question to raise*, not a bug claim — see [risk register](../../09-reference/risk-register.md)... investigate `get-identity-hash.ts` first: it may salt/rotate).
+- **Invariant:** EU visitor IPs are never stored (L143-L145) — but `identityHash` (L88) is derived from IP earlier. Annotate whether the hash constitutes personal data under the same policy (this is a *question to raise*, not a bug claim — see [risk register](../09-reference/risk-register.md)... investigate `get-identity-hash.ts` first: it may salt/rotate).
 - **Output:** flat snake_case `clickData` — annotate why snake_case (Tinybird column names — the wire format leaks inward, a boundary observation).
 
 ## Drill 7: SWR key construction

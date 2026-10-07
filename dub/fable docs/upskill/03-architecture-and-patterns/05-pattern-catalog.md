@@ -220,7 +220,7 @@ Problem it solves: request validation, TypeScript types, and API docs drifting a
 
 General shape: one Zod schema per resource in a central directory; routes `parse` at the boundary; `z.infer` provides types; OpenAPI is generated from the same schemas.
 
-Real example: [lib/zod/schemas/links.ts](../../../apps/web/lib/zod/schemas/links.ts) (70+ schema files in [lib/zod/schemas/](../../../apps/web/lib/zod/schemas/)), consumed at [app/api/links/route.ts#L54-L56](../../../apps/web/app/api/links/route.ts#L54-L56); OpenAPI generation via [scripts/generate-openapi.ts](../../../apps/web/scripts/generate-openapi.ts) and [lib/openapi/](../../../apps/web/lib/openapi/).
+Real example: [lib/zod/schemas/links.ts](../../../apps/web/lib/zod/schemas/links.ts) (65 schema files in [lib/zod/schemas/](../../../apps/web/lib/zod/schemas/)), consumed at [app/api/links/route.ts#L54-L56](../../../apps/web/app/api/links/route.ts#L54-L56); OpenAPI generation via the `generate-openapi` script (its `scripts/generate-openapi.ts` entry file is missing from this snapshot) and [lib/openapi/](../../../apps/web/lib/openapi/).
 Second example: **outbound** contract enforcement — webhook payload parsed before send, [app/api/links/route.ts#L92](../../../apps/web/app/api/links/route.ts#L92).
 
 Why this implementation works: the schema is the source of truth for three artifacts; changing it forces all three to move together.

@@ -43,7 +43,7 @@ That last row is the key architectural fact: *every unknown hostname is assumed 
 | API routes | `apps/web/app/api/` + `apps/web/app/(ee)/api/` | thin handlers; real logic in `lib/api` |
 | Domain logic | `apps/web/lib/api/<resource>/` | e.g. [lib/api/links/](../../../apps/web/lib/api/links/) — the heart |
 | Auth wrappers | `apps/web/lib/auth/` | [workspace.ts](../../../apps/web/lib/auth/workspace.ts) et al |
-| Contracts | `apps/web/lib/zod/schemas/` | 70+ schema files; also feed OpenAPI |
+| Contracts | `apps/web/lib/zod/schemas/` | 65 schema files; also feed OpenAPI |
 | Server actions | `apps/web/lib/actions/` | next-safe-action clients ([safe-action.ts](../../../apps/web/lib/actions/safe-action.ts)) |
 | Client data hooks | `apps/web/lib/swr/` | one `use-<resource>` per API resource |
 | Persistence | `packages/prisma/schema/` + `apps/web/lib/planetscale/` | Prisma for CRUD, HTTP driver for hot paths |

@@ -86,4 +86,4 @@ Lesson: destructive bulk endpoints are where juniors create incidents; the check
 
 ---
 
-Self-grading across katas — Basic: caught the blocking issue in ≥4. Solid: caught blocking in ≥6 and correctly *tiered* findings (didn't block on style). Strong: 8/8 blocking finds, plus each review includes one genuine question (not rhetorical) and one alternative path, phrased so the author keeps their dignity. Convert katas 1, 2, and 8 into timed interview practice via [08/05](../../08-interview-prep/05-debugging-and-code-review-rounds.md).
+Self-grading across katas — Basic: caught the blocking issue in ≥4. Solid: caught blocking in ≥6 and correctly *tiered* findings (didn't block on style). Strong: 8/8 blocking finds, plus each review includes one genuine question (not rhetorical) and one alternative path, phrased so the author keeps their dignity. Convert katas 1, 2, and 8 into timed interview practice via [08/05](../08-interview-prep/05-debugging-and-code-review-rounds.md).

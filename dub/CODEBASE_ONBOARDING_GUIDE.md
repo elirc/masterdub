@@ -117,7 +117,7 @@ pnpm run script dev/seed
 : Playwright end-to-end tests for partner and workspace flows.
 
 `apps/web/scripts`
-: Operational scripts, seed scripts, backfills, importers, and OpenAPI generation.
+: Operational scripts, seed scripts (`scripts/dev/seed.ts`), backfills, and importers. The `generate-openapi` script in `apps/web/package.json` points at `scripts/generate-openapi.ts`, which is not in this snapshot.
 
 `packages/prisma`
 : Prisma client package. `index.ts` exports the main singleton client, `edge.ts` exports a PlanetScale adapter client, and `schema/*.prisma` holds the database model split by domain.
